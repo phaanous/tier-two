@@ -5,9 +5,8 @@ pipeline {
         stage('Build') {                        
             steps {
                 echo 'Building..'
-                sleep {
-                    time: 3
-                    unit: seconds
+                sleep(3) {
+                    echo 'Waiting for 3 seconds'
                 }
                 echo 'Built completed in 3 seconds'
             }        
