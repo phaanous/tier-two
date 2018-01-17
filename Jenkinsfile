@@ -2,24 +2,36 @@ pipeline {
     agent any
 
     stages {
+
+        when { branch 'master' }
+
         stage('Build Tier Two') {                        
+
             steps {
                 echo 'Building..'
-                sleep(3) {
-                    echo 'Waiting for 3 seconds'
+                sleep(5) {
+                    echo 'Waiting for 5 seconds'
                 }
-                echo 'Built completed in 3 seconds'
+                echo 'Built completed in 5 seconds'
             }        
+
         }
+
         stage('Test') {
+
             steps {
                 echo 'Testing..'
             }
+
         }
+
         stage('Deploy') {
+
             steps {
                 echo 'Deploying....'
             }
+
         }
+
     }
 }
